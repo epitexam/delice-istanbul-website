@@ -1,5 +1,5 @@
 /* ============================================================
-   PALETTE BRUTE — valeurs exactes du HTML source
+   PALETTE BRUTE — valeurs exactes du design de référence
    ============================================================ */
 :root {
   --color-red: #cf2e2a;
@@ -9,12 +9,15 @@
   --color-sand: #e4d5b9;
   --color-sand-soft: #efe2cb;
 
-  /* Le corps de page utilise --color-text, plus chaud que le crème
-     réservé aux aplats. */
+  /* Nuances de texte : le corps de page utilise --color-text,
+     légèrement plus chaud que le crème réservé aux aplats. */
   --color-text: #eaddc8;
   --color-text-dark: #231c18;
   --color-text-muted: #514539;
+  --color-text-subtle: #ded4ca; /* liens de navigation, boutons de langue */
+  --color-text-faint: #a89a90; /* libellés secondaires, signatures d'avis */
   --color-grey: #b5a9a0;
+
   --color-white: #ffffff;
   --color-black: #000000;
 
