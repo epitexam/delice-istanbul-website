@@ -1,0 +1,27 @@
+---
+interface Props {
+  size?: 'large' | 'small' | 'hero';
+  color?: 'red' | 'red-light' | 'ink';
+  nowrap?: boolean;
+}
+const { size = 'large', color = 'red', nowrap = false } = Astro.props;
+---
+<span class={`script-text script-text--${size} script-text--${color} ${nowrap ? 'script-text--nowrap' : ''}`}>
+  <slot />
+</span>
+
+<style>
+.script-text {
+  display: inline-block;
+  font-family: var(--font-family-script);
+  line-height: 1;
+  transform-origin: left center;
+}
+.script-text--large { font-size: var(--font-size-script); margin-top: 8px; transform: rotate(-3deg); }
+.script-text--small { font-size: var(--font-size-script-small); margin-top: 6px; transform: rotate(-3deg); }
+.script-text--hero { font-size: var(--font-size-script-hero); margin-top: 6px; transform: rotate(-4deg); }
+.script-text--red { color: var(--color-red); }
+.script-text--red-light { color: var(--color-red-light); }
+.script-text--ink { color: var(--color-ink); }
+.script-text--nowrap { white-space: nowrap; }
+</style>

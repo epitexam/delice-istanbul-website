@@ -1,0 +1,28 @@
+---
+interface Props {
+  href?: string;
+}
+const { href = '#top' } = Astro.props;
+---
+<a class="logo" href={href}>
+  <span class="logo-bar"></span>
+  <span class="logo-stack">
+    <span class="logo-line">
+      <span class="logo-word">Délices</span>
+      <span class="logo-name">Istanbul</span>
+    </span>
+    <span class="logo-sub">Depuis 2010 — Bondy</span>
+  </span>
+</a>
+
+<style>
+.logo { display: flex; align-items: center; gap: 12px; color: var(--color-text-on-dark); }
+.logo:hover { color: var(--color-text-on-dark); }
+.logo-bar { width: 3px; height: 36px; flex: none; background: var(--color-primary); }
+.logo-stack { display: flex; flex-direction: column; gap: 3px; line-height: 1; }
+.logo-line { display: flex; align-items: baseline; gap: 8px; }
+.logo-word { font-family: var(--font-family-brand); font-size: 15px; font-weight: 600; color: var(--color-primary-light); }
+.logo-name { font-family: var(--font-family-display); font-size: 24px; text-transform: uppercase; letter-spacing: .03em; color: var(--color-cream); }
+.logo-sub { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-grey); }
+@media (max-width: 520px) { .logo-sub { display: none; } }
+</style>

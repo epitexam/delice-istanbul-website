@@ -1,23 +1,89 @@
+---
+import '../styles/global.css';
+import Header from '../components/organisms/Header.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Délices Istanbul — Restaurant turc halal à Bondy', description = 'Restaurant turc halal à Bondy : grillades au charbon, pain chaud, sauces maison. Sur place et à emporter, 7j/7.' } = Astro.props;
+---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#cf2e2a" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23cf2e2a'/%3E%3Crect x='8' y='16' width='48' height='32' fill='%2316110f'/%3E%3Ctext x='32' y='41' font-family='Impact,sans-serif' font-size='22' fill='%23f3e7d1' text-anchor='middle'%3EDI%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700&family=Jost:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Sélecteur de langue CSS -->
+    <input type="radio" name="lang" id="lang-fr" class="lang-input" checked />
+    <input type="radio" name="lang" id="lang-en" class="lang-input" />
+
+    <div class="page">
+      <Header />
+      <main>
+        <slot /> <!-- C’est ici que le contenu de la page sera injecté -->
+      </main>
+    </div>
+
+    <!-- JSON-LD (SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Délices Istanbul",
+        "servesCuisine": "Turque",
+        "priceRange": "€",
+        "telephone": "+33148474526",
+        "email": "erkam-goezetlik@yahoo.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue Auguste Polissard",
+          "postalCode": "93140",
+          "addressLocality": "Bondy",
+          "addressCountry": "FR"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 48.9041432, "longitude": 2.4805542 },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "11:00",
+          "closes": "23:30"
+        }]
+      }
+    </script>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  .lang-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  :root {
+    --header-height: 90px;
+  }
+  .page {
+    padding-top: var(--header-height);
+  }
 </style>

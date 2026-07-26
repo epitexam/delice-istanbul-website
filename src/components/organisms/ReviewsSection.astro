@@ -1,0 +1,159 @@
+---
+import Heading from "../atoms/Heading.astro";
+import Eyebrow from "../atoms/Eyebrow.astro";
+import ReviewCard from "../molecules/ReviewCard.astro";
+---
+
+<section class="section section--red">
+  <div class="stripes"></div>
+  <div class="wrap" style="position:relative">
+    <div class="reviews-head">
+      <div class="col">
+        <Eyebrow>
+          <span class="i18n fr">Ils en parlent</span>
+          <span class="i18n en">Reviews</span>
+        </Eyebrow>
+        <!-- style passé en prop -->
+        <Heading level={2} class="heading-cream">
+          <span class="i18n fr">Avis de nos clients</span>
+          <span class="i18n en">What our guests say</span>
+        </Heading>
+      </div>
+      <a
+        class="btn-google"
+        href="https://www.google.com/search?q=D%C3%A9lices%20Istanbul%20Bondy%20rue%20auguste%20polissard%2027"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="stars">★★★★★</span>
+        <span class="i18n fr">Voir sur Google</span>
+        <span class="i18n en">See on Google</span>
+      </a>
+    </div>
+
+    <div class="reviews">
+      <ReviewCard
+        stars={5}
+        quote={(
+          <span style="display:contents">
+            <span class="i18n fr">
+              « Le meilleur kebab du coin, et de loin. Viande goûteuse, pain
+              frais, portions généreuses. »
+            </span>
+            <span class="i18n en">
+              “The best kebab around, by far. Tasty meat, fresh bread, generous
+              portions.”
+            </span>
+          </span>
+        )}
+        author={(
+          <span style="display:contents">
+            <span class="i18n fr">Avis Google · à remplacer</span>
+            <span class="i18n en">Google review · replace</span>
+          </span>
+        )}
+      />
+      <ReviewCard
+        stars={5}
+        quote={(
+          <span style="display:contents">
+            <span class="i18n fr">
+              « Accueil très sympathique et service rapide, même le midi quand
+              c'est plein. »
+            </span>
+            <span class="i18n en">
+              “Very friendly welcome and fast service, even at a busy
+              lunchtime.”
+            </span>
+          </span>
+        )}
+        author={(
+          <span style="display:contents">
+            <span class="i18n fr">Avis Google · à remplacer</span>
+            <span class="i18n en">Google review · replace</span>
+          </span>
+        )}
+      />
+      <ReviewCard
+        stars={5}
+        quote={(
+          <span style="display:contents">
+            <span class="i18n fr">
+              « Prix très corrects pour la qualité. On y retourne toutes les
+              semaines en famille. »
+            </span>
+            <span class="i18n en">
+              “Great value for the quality. We come back every week as a
+              family.”
+            </span>
+          </span>
+        )}
+        author={(
+          <span style="display:contents">
+            <span class="i18n fr">Avis Google · à remplacer</span>
+            <span class="i18n en">Google review · replace</span>
+          </span>
+        )}
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .section--red {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-red);
+    color: var(--color-cream);
+  }
+  .stripes {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: repeating-linear-gradient(
+      58deg,
+      rgba(22, 17, 15, 0.13) 0 2px,
+      transparent 2px 26px
+    );
+  }
+  .reviews-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 22px;
+    margin-bottom: clamp(30px, 4vw, 48px);
+  }
+  .btn-google {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 22px;
+    background: var(--color-ink);
+    color: var(--color-cream);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+  }
+  .btn-google:hover {
+    background: var(--color-cream);
+    color: var(--color-red);
+  }
+  .stars {
+    letter-spacing: 2px;
+  }
+  .reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(18px, 2.4vw, 24px);
+  }
+  .heading-cream {
+  color: var(--color-cream);
+}
+</style>

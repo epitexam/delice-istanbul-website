@@ -1,0 +1,20 @@
+---
+interface Props {
+  color?: 'light' | 'dark';
+}
+const { color = 'dark' } = Astro.props;
+---
+<hr class={`divider divider--${color}`} />
+
+<style>
+.divider {
+  border: none;
+  margin: 0;
+}
+.divider--dark {
+  border-bottom: 2px solid rgba(243, 231, 209, .14);
+}
+.divider--light {
+  border-bottom: 2px solid rgba(22, 17, 15, .25);
+}
+</style>

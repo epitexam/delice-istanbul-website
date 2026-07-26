@@ -1,0 +1,147 @@
+---
+import Heading from "../atoms/Heading.astro";
+import ScriptText from "../atoms/ScriptText.astro";
+import Eyebrow from "../atoms/Eyebrow.astro";
+import Badge from "../atoms/Badge.astro";
+import DaySchedule from "../molecules/DaySchedule.astro";
+---
+
+<section class="section section--sand" id="infos">
+  <div class="wrap">
+    <div class="panel">
+      <div class="panel-grid">
+        <div class="panel-col">
+          <Eyebrow variant="red">
+            <span class="i18n fr">Horaires</span>
+            <span class="i18n en">Hours</span>
+          </Eyebrow>
+          <Heading level={2}>
+            <span class="i18n fr">Ouvert<br />tous les jours</span>
+            <span class="i18n en">Open<br />every day</span>
+          </Heading>
+          <ScriptText size="small">
+            <span class="i18n fr">service continu</span>
+            <span class="i18n en">all day long</span>
+          </ScriptText>
+
+          <div class="days">
+            <DaySchedule
+              day={<><span class="i18n fr">Lundi</span><span class="i18n en">Monday</span></>}
+              hours={<><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></>}
+            />
+            <DaySchedule
+              day={<><span class="i18n fr">Mardi</span><span class="i18n en">Tuesday</span></>}
+              hours={<><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></>}
+            />
+            <DaySchedule
+              day={<><span class="i18n fr">Mercredi</span><span class="i18n en">Wednesday</span></>}
+              hours={<><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></>}
+            />
+            <DaySchedule
+              day={<><span class="i18n fr">Jeudi</span><span class="i18n en">Thursday</span></>}
+              hours={<><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></>}
+            />
+            <DaySchedule
+              day={<><span class="i18n fr">Vendredi</span><span class="i18n en">Friday</span></>}
+              hours={<><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></>}
+            />
+            <DaySchedule
+              day={<><span class="i18n fr">Samedi</span><span class="i18n en">Saturday</span></>}
+              hours={<><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></>}
+            />
+            <DaySchedule
+              day={<><span class="i18n fr">Dimanche</span><span class="i18n en">Sunday</span></>}
+              hours={<><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></>}
+            />
+          </div>
+        </div>
+
+        <div class="panel-col panel-col--gap">
+          <div>
+            <h3 class="sub-title">
+              <span class="i18n fr">Moyens de paiement</span>
+              <span class="i18n en">Payment options</span>
+            </h3>
+            <div class="chips">
+              <Badge><span class="i18n fr">Espèces</span><span class="i18n en">Cash</span></Badge>
+              <Badge><span class="i18n fr">Sans contact</span><span class="i18n en">Contactless</span></Badge>
+              <Badge><span class="i18n fr">Carte bancaire</span><span class="i18n en">Debit card</span></Badge>
+              <Badge>VISA</Badge>
+              <Badge>Mastercard</Badge>
+              <Badge>Ticket Restaurant®</Badge>
+              <Badge><span class="i18n fr">Titres-restaurant</span><span class="i18n en">Meal vouchers</span></Badge>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="sub-title">Services</h3>
+            <div class="chips">
+              <Badge variant="solid"><span class="i18n fr">Terrasse</span><span class="i18n en">Outside seating</span></Badge>
+              <Badge variant="solid"><span class="i18n fr">À emporter</span><span class="i18n en">Takeaway</span></Badge>
+              <Badge variant="solid"><span class="i18n fr">Sur place</span><span class="i18n en">Eat in</span></Badge>
+              <Badge variant="solid"><span class="i18n fr">Sans réservation</span><span class="i18n en">No booking</span></Badge>
+            </div>
+          </div>
+
+          <div class="callout">
+            <p>
+              <span class="i18n fr">Pas besoin de réserver : passez quand vous voulez pendant nos heures d'ouverture. Pour une commande à emporter, un simple appel au <a href="tel:+33148474526">01 48 47 45 26</a> suffit.</span>
+              <span class="i18n en">No booking required — just drop in during opening hours. For takeaway, one call to <a href="tel:+33148474526">+33 1 48 47 45 26</a> is enough.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="css">
+  .panel {
+    background: var(--color-ink);
+    color: var(--color-cream);
+    border: 3px solid var(--color-ink);
+    box-shadow: 14px 14px 0 rgba(207, 46, 42, 0.85);
+  }
+  .panel-grid {
+    padding: clamp(28px, 4vw, 54px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(30px, 4vw, 58px);
+    align-items: stretch;
+  }
+  .panel-col {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-col--gap {
+    gap: 26px;
+  }
+  .sub-title {
+    margin: 0 0 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-red-light);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .callout {
+    padding: 22px 24px;
+    background: rgba(243, 231, 209, 0.07);
+    border-left: 3px solid var(--color-red);
+  }
+  .callout p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--color-cream);
+  }
+  .callout a {
+    color: var(--color-red-light);
+  }
+</style>

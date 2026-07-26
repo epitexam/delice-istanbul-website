@@ -1,0 +1,47 @@
+---
+// Bandeau défilant d'infos
+---
+<div class="strip">
+  <div class="strip-inner">
+    <span class="i18n fr">
+      <span>100 % Halal</span><span class="strip-sep">◆</span>
+      <span>À emporter</span><span class="strip-sep">◆</span>
+      <span>Terrasse</span><span class="strip-sep">◆</span>
+      <span>Tickets Restaurant®</span><span class="strip-sep">◆</span>
+      <span>Sans réservation</span>
+    </span>
+    <span class="i18n en">
+      <span>100% Halal</span><span class="strip-sep">◆</span>
+      <span>Takeaway</span><span class="strip-sep">◆</span>
+      <span>Outside seating</span><span class="strip-sep">◆</span>
+      <span>Meal vouchers</span><span class="strip-sep">◆</span>
+      <span>No booking needed</span>
+    </span>
+  </div>
+</div>
+
+<style>
+.strip {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 22px clamp(16px, 5vw, 64px);
+  border-bottom: 2px solid var(--color-red);
+}
+.strip-inner {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 40px);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.strip-sep {
+  color: var(--color-red-light);
+}
+</style>

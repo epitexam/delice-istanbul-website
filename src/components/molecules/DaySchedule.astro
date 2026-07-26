@@ -1,0 +1,36 @@
+---
+interface Props {
+  day: any;
+  hours: any;
+}
+const { day, hours } = Astro.props;
+---
+<div class="day">
+  <span class="day-name">{day}</span>
+  <span class="day-hours">{hours}</span>
+</div>
+
+<style>
+.day {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(243, 231, 209, .14);
+}
+.day-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+}
+.day-hours {
+  font-family: var(--font-family-display);
+  font-size: 17px;
+  letter-spacing: .02em;
+  color: var(--color-red-light);
+  font-variant-numeric: tabular-nums;
+}
+</style>

@@ -1,0 +1,41 @@
+/* ============================================================
+   PALETTE BRUTE — valeurs exactes du HTML source
+   ============================================================ */
+:root {
+  --color-red: #cf2e2a;
+  --color-red-light: #e0433d;
+  --color-ink: #16110f;
+  --color-cream: #f3e7d1;
+  --color-sand: #e4d5b9;
+  --color-sand-soft: #efe2cb;
+  --color-text-dark: #231c18;
+  --color-text-muted: #514539;
+  --color-grey: #b5a9a0;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* ============================================================
+     TOKENS SÉMANTIQUES — utilisés dans les composants
+     ============================================================ */
+  --color-primary: var(--color-red);
+  --color-primary-hover: var(--color-red-light);
+  --color-primary-on: var(--color-cream);
+
+  --color-background-dark: var(--color-ink);
+  --color-background-light: var(--color-sand);
+  --color-background-surface: var(--color-sand-soft);
+
+  --color-text-on-dark: var(--color-cream);
+  --color-text-on-light: var(--color-text-dark);
+  --color-text-muted-on-light: var(--color-text-muted);
+
+  --color-border-light: rgba(207, 46, 42, 0.3);
+  --color-border-dark: rgba(243, 231, 209, 0.14);
+
+  --color-focus-ring: var(--color-cream);
+
+  /* Utilitaires supplémentaires */
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+}

@@ -1,0 +1,28 @@
+---
+interface Props {
+  for: string; // 'lang-fr' ou 'lang-en'
+}
+const { for: forId } = Astro.props;
+---
+<label class="lang-btn" for={forId}>
+  <slot />
+</label>
+
+<style>
+.lang-btn {
+  padding: 6px 9px;
+  border: 1px solid rgba(242,236,226,.22);
+  background: transparent;
+  color: #ded4ca;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.lang-btn:hover {
+  color: var(--color-cream);
+  border-color: var(--color-primary);
+}
+</style>

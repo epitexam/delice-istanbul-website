@@ -1,0 +1,45 @@
+
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/radii.css';
+@import './tokens/shadows.css';
+@import './tokens/transitions.css';
+@import './tokens/breakpoints.css';
+@import './base.css';
+
+.i18n {
+  display: contents;
+}
+.i18n.en {
+  display: none;
+}
+
+#lang-en:checked ~ .page .i18n.fr {
+  display: none;
+}
+#lang-en:checked ~ .page .i18n.en {
+  display: contents;
+}
+
+#lang-fr:checked ~ .page .lang-btn[for='lang-fr'],
+#lang-en:checked ~ .page .lang-btn[for='lang-en'] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-cream);
+}
+
+
+#lang-fr:focus-visible ~ .page .lang-btn[for='lang-fr'],
+#lang-en:focus-visible ~ .page .lang-btn[for='lang-en'] {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+:root {
+  --header-height: 90px;
+}
+
+.page {
+  padding-top: var(--header-height);
+}

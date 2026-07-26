@@ -1,0 +1,141 @@
+---
+import Heading from '../atoms/Heading.astro';
+import ScriptText from '../atoms/ScriptText.astro';
+import Eyebrow from '../atoms/Eyebrow.astro';
+import Stat from '../molecules/Stat.astro';
+---
+<section class="section section--sand" id="maison">
+  <div class="wrap split">
+    <div class="col">
+      <Eyebrow>
+        <span class="i18n fr">La maison · depuis 2010</span>
+        <span class="i18n en">The house · since 2010</span>
+      </Eyebrow>
+      <Heading level={2}>
+        <span class="i18n fr">La table de quartier<br>qui a le goût du voyage</span>
+        <span class="i18n en">A neighbourhood table<br>with the taste of travel</span>
+      </Heading>
+      <ScriptText>
+        <span class="i18n fr">le vrai goût d'Istanbul</span>
+        <span class="i18n en">the real taste of Istanbul</span>
+      </ScriptText>
+
+      <div class="prose">
+        <span class="i18n fr">
+          <p>Chez Délices Istanbul, tout part du grill : viandes marinées le matin, légumes grillés à la commande, pain chaud et sauces maison. Rien de compliqué — simplement des produits soignés et des recettes que l'on fait depuis toujours en famille.</p>
+          <p>On vient ici pour une pause déjeuner tranquille, un dîner en famille ou un repas à emporter en rentrant. Le service est rapide, les prix restent raisonnables, et l'accueil est le même pour tout le monde.</p>
+        </span>
+        <span class="i18n en">
+          <p>At Délices Istanbul everything starts at the grill: meats marinated in the morning, vegetables charred to order, warm bread and house-made sauces. Nothing complicated — careful ingredients and recipes our family has always cooked.</p>
+          <p>Come for a quiet lunch break, a family dinner, or a meal to take home on the way back. Service is quick, prices stay reasonable, and everyone gets the same welcome.</p>
+        </span>
+      </div>
+
+      <div class="stats">
+        <Stat number="7/7" label={<><span class="i18n fr">Ouvert</span><span class="i18n en">Open</span></>} />
+        <Stat number="11H–23H30" label={<><span class="i18n fr">Service continu</span><span class="i18n en">All day</span></>} />
+        <Stat number="100%" label="Halal" variant="red" />
+      </div>
+    </div>
+
+    <div class="mosaic">
+      <div class="mosaic-cell mosaic-cell--tall">
+        <div class="photo"><p class="photo-hint">Portrait — le grill / le chef au travail</p></div>
+      </div>
+      <div class="mosaic-cell">
+        <div class="photo"><p class="photo-hint">Salle ou terrasse</p></div>
+      </div>
+      <div class="mosaic-cell">
+        <div class="photo"><p class="photo-hint">Détail — pain, sauces, épices</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.section {
+  padding: clamp(64px, 9vw, 124px) clamp(16px, 5vw, 64px);
+}
+.section--sand {
+  background: var(--color-sand);
+  color: var(--color-text-on-light);
+}
+.wrap {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+  gap: clamp(34px, 5vw, 72px);
+  align-items: center;
+}
+.col {
+  min-width: 0;
+}
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #453a32;
+  max-width: 56ch;
+}
+.prose p {
+  margin: 0;
+}
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+.mosaic {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: 190px 190px;
+  gap: 12px;
+}
+.mosaic-cell {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid var(--color-ink);
+}
+.mosaic-cell--tall {
+  grid-row: span 2;
+}
+.photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #221a17;
+}
+.photo-hint {
+  margin: 0;
+  padding: 18px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #8d817a;
+  border: 2px dashed rgba(243, 231, 209, .22);
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .mosaic {
+    grid-template-rows: 150px 150px;
+  }
+}
+</style>

@@ -1,0 +1,65 @@
+---
+import Logo from "../atoms/Logo.astro";
+import NavLink from "../atoms/NavLink.astro";
+import PhoneLink from "../atoms/PhoneLink.astro";
+import LanguageSelector from "../molecules/LanguageSelector.astro";
+---
+
+<header class="site-header">
+    <Logo />
+
+    <nav class="site-nav">
+        <NavLink href="#maison">
+            <span class="i18n fr">La maison</span>
+            <span class="i18n en">About</span>
+        </NavLink>
+        <NavLink href="#cuisine">
+            <span class="i18n fr">Notre cuisine</span>
+            <span class="i18n en">Our food</span>
+        </NavLink>
+        <NavLink href="#infos">
+            <span class="i18n fr">Horaires</span>
+            <span class="i18n en">Hours</span>
+        </NavLink>
+        <NavLink href="#adresse">
+            <span class="i18n fr">Nous trouver</span>
+            <span class="i18n en">Find us</span>
+        </NavLink>
+        <LanguageSelector />
+        <PhoneLink href="tel:+33148474526">
+            <span>01 48 47 45 26</span>
+        </PhoneLink>
+    </nav>
+</header>
+
+<style>
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 14px clamp(16px, 4vw, 56px);
+        background: rgba(22, 17, 15, 0.86);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(207, 46, 42, 0.22);
+    }
+    .site-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(14px, 2vw, 30px);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        justify-content: flex-end;
+    }
+    @media (max-width: 900px) {
+        .site-header {
+            gap: 12px;
+        }
+    }
+</style>

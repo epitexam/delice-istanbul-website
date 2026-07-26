@@ -1,0 +1,90 @@
+---
+interface Props {
+  kicker: any;
+  title: any;
+  text: any;
+  imageAlt: any;
+}
+const { kicker, title, text, imageAlt } = Astro.props;
+---
+<article class="card">
+  <div class="card-media">
+    <div class="photo">
+      <p class="photo-hint">{imageAlt}</p>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-kicker">{kicker}</div>
+    <h3 class="card-title">{title}</h3>
+    <p class="card-text">{text}</p>
+  </div>
+</article>
+
+<style>
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background-surface);
+  color: var(--color-text-on-light);
+  border: 3px solid var(--color-ink);
+  box-shadow: 8px 8px 0 var(--color-red);
+}
+.card-media {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  border-bottom: 3px solid var(--color-ink);
+}
+.card-body {
+  padding: 26px 24px 30px;
+}
+.card-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+.card-title {
+  margin: 12px 0 0;
+  font-family: var(--font-family-display);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.08;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+}
+.card-text {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-muted-on-light);
+}
+.photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #221a17;
+}
+.photo-hint {
+  margin: 0;
+  padding: 18px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #8d817a;
+  border: 2px dashed rgba(243, 231, 209, .22);
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

@@ -1,0 +1,38 @@
+---
+interface Props {
+  variant?: 'dark' | 'red';
+  size?: 'default' | 'hero';
+}
+const { variant = 'dark', size = 'default' } = Astro.props;
+---
+<span class={`eyebrow eyebrow--${variant} eyebrow--size-${size}`}>
+  <slot />
+</span>
+
+<style>
+.eyebrow {
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.eyebrow--size-default {
+  padding: 6px 13px;
+  font-size: 10px;
+  margin-bottom: 18px;
+}
+.eyebrow--size-hero {
+  padding: 8px 16px;
+  font-size: 11px;
+  margin-bottom: 32px;
+  white-space: nowrap;
+}
+.eyebrow--dark {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+.eyebrow--red {
+  background: var(--color-red);
+  color: var(--color-cream);
+}
+</style>

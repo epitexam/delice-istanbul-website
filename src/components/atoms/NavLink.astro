@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+}
+const { href } = Astro.props;
+---
+<a class="nav-link" href={href}>
+  <slot />
+</a>
+
+<style>
+.nav-link {
+  color: #ded4ca;
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+.nav-link:hover { color: var(--color-primary); }
+@media (max-width: 900px) { .nav-link { display: none; } }
+</style>

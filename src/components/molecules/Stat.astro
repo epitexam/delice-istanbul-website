@@ -1,0 +1,41 @@
+---
+interface Props {
+  number: any;
+  label: any;
+  variant?: 'default' | 'red';
+}
+const { number, label, variant = 'default' } = Astro.props;
+---
+<div class={`stat stat--${variant}`}>
+  <div class="stat-num">{number}</div>
+  <div class="stat-label">{label}</div>
+</div>
+
+<style>
+.stat {
+  padding: 16px 22px;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  min-width: 108px;
+}
+.stat--red {
+  background: var(--color-red);
+}
+.stat-num {
+  font-family: var(--font-family-display);
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: .01em;
+}
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-red-light);
+  margin-top: 6px;
+}
+.stat--red .stat-label {
+  color: var(--color-cream);
+}
+</style>

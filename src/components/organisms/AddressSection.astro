@@ -1,0 +1,102 @@
+---
+import Heading from "../atoms/Heading.astro";
+import Eyebrow from "../atoms/Eyebrow.astro";
+import ContactRow from "../molecules/ContactRow.astro";
+---
+
+<section class="section section--ink" id="adresse">
+    <div class="wrap split">
+        <div class="col">
+            <Eyebrow>
+                <span class="i18n fr">Nous trouver</span>
+                <span class="i18n en">Find us</span>
+            </Eyebrow>
+            <Heading level={2} class="address-title"
+                >27 rue Auguste Polissard<br /><span>93140 Bondy</span></Heading
+            >
+
+            <div class="contact-list">
+                <!-- Correction ici : fragment autour des deux spans -->
+                <ContactRow
+                    label={(
+                        <>
+                            <span class="i18n fr">Téléphone</span>
+                            <span class="i18n en">Phone</span>
+                        </>
+                    )}
+                    value="01 48 47 45 26"
+                    href="tel:+33148474526"
+                />
+                <ContactRow
+                    label="E-mail"
+                    value="erkam-goezetlik@yahoo.fr"
+                    href="mailto:erkam-goezetlik@yahoo.fr"
+                    variant="mail"
+                />
+            </div>
+
+            <a
+                class="btn-map"
+                href="https://www.google.com/maps/dir/?api=1&destination=48.9041432,2.4805542"
+                target="_blank"
+                rel="noopener"
+            >
+                <span class="i18n fr">Ouvrir l'itinéraire</span>
+                <span class="i18n en">Get directions</span>
+            </a>
+        </div>
+
+        <div class="map">
+            <iframe
+                title="Carte — 27 rue Auguste Polissard, Bondy"
+                loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=2.4735%2C48.9006%2C2.4876%2C48.9077&layer=mapnik&marker=48.9041432%2C2.4805542"
+            ></iframe>
+        </div>
+    </div>
+</section>
+
+<style>
+    .address-title span {
+        color: var(--color-red-light);
+    }
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 28px;
+    }
+    .btn-map {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        padding: 17px 32px;
+        background: var(--color-red);
+        color: var(--color-cream);
+        font-family: var(--font-family-display);
+        font-size: 17px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        box-shadow: 6px 6px 0 rgba(249, 241, 228, 0.18);
+        transition:
+            background var(--transition-fast),
+            color var(--transition-fast);
+    }
+    .btn-map:hover {
+        background: var(--color-cream);
+        color: var(--color-red);
+    }
+    .map {
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        border: 3px solid var(--color-sand);
+        height: clamp(300px, 42vw, 440px);
+    }
+    .map iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: grayscale(0.4) contrast(1.05);
+    }
+</style>

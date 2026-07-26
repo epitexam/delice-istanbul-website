@@ -1,0 +1,43 @@
+---
+interface Props {
+  stars: number;
+  quote: any;
+  author: any;
+}
+const { stars, quote, author } = Astro.props;
+---
+<figure class="review">
+  <span class="review-stars">{'★'.repeat(stars)}{'☆'.repeat(5 - stars)}</span>
+  <blockquote>{quote}</blockquote>
+  <figcaption>{author}</figcaption>
+</figure>
+
+<style>
+.review {
+  margin: 0;
+  padding: 28px 26px;
+  background: var(--color-ink);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.review-stars {
+  color: var(--color-red-light);
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+.review blockquote {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-cream);
+}
+.review figcaption {
+  margin-top: auto;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #a89a90;
+}
+</style>

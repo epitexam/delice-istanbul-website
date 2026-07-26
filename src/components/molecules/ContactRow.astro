@@ -1,0 +1,47 @@
+---
+interface Props {
+  label: any;
+  value: any;
+  href?: string;
+  variant?: 'default' | 'mail';
+}
+const { label, value, href, variant = 'default' } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+<Tag class="contact-row" href={href}>
+  <span class="contact-label">{label}</span>
+  <span class={`contact-value ${variant === 'mail' ? 'contact-value--mail' : ''}`}>{value}</span>
+</Tag>
+
+<style>
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 2px solid rgba(249, 241, 228, .14);
+  color: var(--color-cream);
+  transition: color var(--transition-fast);
+}
+.contact-row:hover {
+  color: var(--color-red-light);
+}
+.contact-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #a89a90;
+}
+.contact-value {
+  font-family: var(--font-family-display);
+  font-size: 22px;
+  letter-spacing: .02em;
+}
+.contact-value--mail {
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  word-break: break-all;
+}
+</style>

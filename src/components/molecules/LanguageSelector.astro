@@ -1,0 +1,17 @@
+---
+import LanguageButton from '../atoms/LanguageButton.astro';
+---
+<span class="lang-switch">
+  <LanguageButton for="lang-fr">FR</LanguageButton>
+  <LanguageButton for="lang-en">EN</LanguageButton>
+</span>
+
+<style>
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(207,46,42,.3);
+}
+</style>
