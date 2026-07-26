@@ -13,8 +13,7 @@ import ReviewCard from "../molecules/ReviewCard.astro";
           <span class="i18n fr">Ils en parlent</span>
           <span class="i18n en">Reviews</span>
         </Eyebrow>
-        <!-- style passé en prop -->
-        <Heading level={2} class="heading-cream">
+        <Heading level={2} tone="cream">
           <span class="i18n fr">Avis de nos clients</span>
           <span class="i18n en">What our guests say</span>
         </Heading>
@@ -153,7 +152,4 @@ import ReviewCard from "../molecules/ReviewCard.astro";
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: clamp(18px, 2.4vw, 24px);
   }
-  .heading-cream {
-  color: var(--color-cream);
-}
 </style>

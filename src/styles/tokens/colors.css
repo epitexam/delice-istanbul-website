@@ -8,6 +8,10 @@
   --color-cream: #f3e7d1;
   --color-sand: #e4d5b9;
   --color-sand-soft: #efe2cb;
+
+  /* Le corps de page utilise --color-text, plus chaud que le crème
+     réservé aux aplats. */
+  --color-text: #eaddc8;
   --color-text-dark: #231c18;
   --color-text-muted: #514539;
   --color-grey: #b5a9a0;
@@ -18,6 +22,7 @@
      TOKENS SÉMANTIQUES — utilisés dans les composants
      ============================================================ */
   --color-primary: var(--color-red);
+  --color-primary-light: var(--color-red-light);
   --color-primary-hover: var(--color-red-light);
   --color-primary-on: var(--color-cream);
 
@@ -25,7 +30,7 @@
   --color-background-light: var(--color-sand);
   --color-background-surface: var(--color-sand-soft);
 
-  --color-text-on-dark: var(--color-cream);
+  --color-text-on-dark: var(--color-text);
   --color-text-on-light: var(--color-text-dark);
   --color-text-muted-on-light: var(--color-text-muted);
 
