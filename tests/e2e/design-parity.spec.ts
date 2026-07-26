@@ -219,7 +219,10 @@ test.describe('parité visuelle avec le design de référence', () => {
     expect(actual!.left).toBe(expected!.left);
   });
 
-  test('les ancres de navigation s’arrêtent au même endroit que le design', async ({ page }) => {
+  test('les ancres de navigation s’arrêtent au même endroit que le design', async ({
+    page,
+    browser,
+  }) => {
     // Défilement instantané : on mesure la position d'arrêt, pas l'animation.
     const jumpToInfos = async (target: Page) => {
       await target.addStyleTag({ content: 'html{scroll-behavior:auto !important}' });
@@ -227,7 +230,15 @@ test.describe('parité visuelle avec le design de référence', () => {
       return (await box(target, '#infos'))!.top;
     };
 
-    const expected = await jumpToInfos(reference);
+    // Page de référence dédiée : ce test fait défiler la page, et la référence
+    // partagée par le describe est mesurée par d'autres tests à scroll nul.
+    const ownReference = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+    await ownReference.goto(REFERENCE_URL);
+    await ready(ownReference);
+
+    const expected = await jumpToInfos(ownReference);
+    await ownReference.close();
+
     const actual = await jumpToInfos(page);
 
     expect(actual).toBe(expected);
