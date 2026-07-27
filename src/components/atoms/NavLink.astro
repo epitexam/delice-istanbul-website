@@ -1,21 +1,33 @@
 ---
 interface Props {
-  href: string;
+  href?: string;
 }
-const { href } = Astro.props;
+const { href = "#top" } = Astro.props;
 ---
+
 <a class="nav-link" href={href}>
   <slot />
 </a>
 
 <style>
-.nav-link {
-  color: var(--color-text-subtle);
-  font-size: 12px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  transition: color var(--transition-fast);
-}
-.nav-link:hover { color: var(--color-primary); }
-@media (max-width: 900px) { .nav-link { display: none; } }
+  .nav-link {
+    color: var(--color-text-subtle);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: color var(--transition-fast);
+    display: inline-block;
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 900px) {
+    .nav-link {
+      display: block;
+      width: 100%;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+  }
 </style>

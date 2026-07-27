@@ -4,29 +4,44 @@ interface Props {
 }
 const { href } = Astro.props;
 ---
+
 <a class="nav-phone" href={href}>
   <slot />
 </a>
 
 <style>
-.nav-phone {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 20px;
-  background: var(--color-primary);
-  color: var(--color-cream);
-  font-weight: 600;
-  letter-spacing: .1em;
-  border-radius: var(--radius-sm);
-  transition: background var(--transition-fast);
-  font-size: 12px;
-}
-.nav-phone:hover {
-  background: var(--color-primary-hover);
-  color: var(--color-cream);
-}
-@media (max-width: 520px) {
-  .nav-phone { padding: 10px 14px; font-size: 11px; }
-}
+  .nav-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    background: var(--color-primary);
+    color: var(--color-cream);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .nav-phone:hover {
+    background: var(--color-primary-hover);
+    color: var(--color-cream);
+  }
+
+  @media (max-width: 900px) {
+    .nav-phone {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .nav-phone {
+      font-size: 12px;
+    }
+  }
 </style>
