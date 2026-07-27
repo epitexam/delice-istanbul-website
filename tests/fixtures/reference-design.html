@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Délices Istanbul — Restaurant turc halal à Bondy</title>
+<meta name="description" content="Restaurant turc halal à Bondy : grillades au charbon, pain chaud, sauces maison. Sur place et à emporter, 7j/7 de 11h00 à 23h30. 27 rue Auguste Polissard, 93140 Bondy.">
+<meta name="theme-color" content="#cf2e2a">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Délices Istanbul — Restaurant turc halal à Bondy">
+<meta property="og:description" content="Grillades au charbon, pain sorti du four, épices d'Anatolie. Sur place et à emporter, 7j/7.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23cf2e2a'/%3E%3Crect x='8' y='16' width='48' height='32' fill='%2316110f'/%3E%3Ctext x='32' y='41' font-family='Impact,sans-serif' font-size='22' fill='%23f3e7d1' text-anchor='middle'%3EDI%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700&family=Jost:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DÉLICES ISTANBUL — feuille de style
+   Palette, typo et mise en page dans ce seul bloc.
+   ============================================================ */
+:root{
+  --red:#cf2e2a;
+  --red-light:#e0433d;
+  --ink:#16110f;
+  --cream:#f3e7d1;
+  --sand:#e4d5b9;
+  --sand-soft:#efe2cb;
+  --text:#eaddc8;
+  --text-dark:#231c18;
+  --text-muted:#514539;
+  --grey:#b5a9a0;
+  --display:Anton, Impact, sans-serif;
+  --script:Yellowtail, cursive;
+  --body:Jost, system-ui, sans-serif;
+  --brand:Archivo, sans-serif;
+  --header-h:90px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--text);
+  font-family:var(--body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:var(--red);text-decoration:none}
+a:hover{color:var(--red-light)}
+:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+section[id]{scroll-margin-top:var(--header-h)}
+
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ---------- Sélecteur de langue, sans JavaScript ----------
+   Deux boutons radio masqués pilotent l'affichage des blocs
+   .fr / .en via le sélecteur CSS :checked. ------------------ */
+.lang-input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.i18n{display:contents}
+.i18n.en{display:none}
+#lang-en:checked ~ .page .i18n.fr{display:none}
+#lang-en:checked ~ .page .i18n.en{display:contents}
+
+.lang-switch{
+  display:flex;align-items:center;gap:6px;
+  padding-left:10px;border-left:1px solid rgba(207,46,42,.3);
+}
+.lang-btn{
+  padding:6px 9px;border:1px solid rgba(242,236,226,.22);background:transparent;
+  color:#ded4ca;font-size:11px;font-weight:600;letter-spacing:.1em;
+  border-radius:2px;cursor:pointer;transition:background .15s,color .15s,border-color .15s;
+}
+.lang-btn:hover{color:var(--cream);border-color:var(--red)}
+#lang-fr:checked ~ .page .lang-btn[for=lang-fr],
+#lang-en:checked ~ .page .lang-btn[for=lang-en]{
+  background:var(--red);border-color:var(--red);color:var(--cream);
+}
+#lang-fr:focus-visible ~ .page .lang-btn[for=lang-fr],
+#lang-en:focus-visible ~ .page .lang-btn[for=lang-en]{outline:3px solid var(--cream);outline-offset:3px}
+
+/* ---------- En-tête ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:14px clamp(16px,4vw,56px);
+  background:rgba(22,17,15,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(207,46,42,.22);
+}
+.logo{display:flex;align-items:center;gap:12px;color:var(--text)}
+.logo:hover{color:var(--text)}
+.logo-bar{width:3px;height:36px;flex:none;background:var(--red)}
+.logo-stack{display:flex;flex-direction:column;gap:3px;line-height:1}
+.logo-line{display:flex;align-items:baseline;gap:8px}
+.logo-word{font-family:var(--brand);font-size:15px;font-weight:600;color:var(--red-light)}
+.logo-name{font-family:var(--display);font-size:24px;text-transform:uppercase;letter-spacing:.03em;color:var(--cream)}
+.logo-sub{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+
+.site-nav{
+  display:flex;align-items:center;gap:clamp(14px,2vw,30px);
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  justify-content:flex-end;
+}
+.nav-link{color:#ded4ca}
+.nav-link:hover{color:var(--red)}
+.nav-phone{
+  display:flex;align-items:center;gap:8px;padding:11px 20px;
+  background:var(--red);color:var(--cream);font-weight:600;letter-spacing:.1em;border-radius:2px;
+  transition:background .15s;
+}
+.nav-phone:hover{background:var(--red-light);color:var(--cream)}
+
+/* ---------- Blocs génériques ---------- */
+.section{padding:clamp(64px,9vw,124px) clamp(16px,5vw,64px)}
+.section--sand{background:var(--sand);color:var(--text-dark)}
+.section--ink{background:var(--ink);color:var(--cream)}
+.section--red{position:relative;overflow:hidden;background:var(--red);color:var(--cream)}
+.wrap{max-width:1240px;margin:0 auto}
+.split{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));
+  gap:clamp(34px,5vw,72px);align-items:center;
+}
+.col{min-width:0}
+
+.eyebrow{
+  display:inline-block;padding:6px 13px;background:var(--ink);color:var(--cream);
+  font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px;
+}
+.eyebrow--red{background:var(--red)}
+.title{
+  margin:0;font-family:var(--display);font-weight:400;
+  text-transform:uppercase;letter-spacing:.01em;line-height:.98;
+  font-size:clamp(32px,4.6vw,58px);
+}
+.script{
+  display:inline-block;margin-top:8px;font-family:var(--script);
+  font-size:clamp(26px,3.4vw,44px);line-height:1;color:var(--red);
+  transform:rotate(-3deg);transform-origin:left center;
+}
+.stripes{
+  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.4;
+  background-image:repeating-linear-gradient(58deg,rgba(22,17,15,.13) 0 2px,transparent 2px 26px);
+}
+
+/* ---------- Emplacements photo ----------
+   Pour poser une vraie image, remplacez le <p class="photo-hint">
+   par : <img src="images/mon-image.jpg" alt="Description">
+   ------------------------------------------------------------ */
+.photo{
+  position:relative;width:100%;height:100%;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:#221a17;
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo-hint{
+  margin:0;padding:18px;text-align:center;
+  font-size:12px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;
+  color:#8d817a;border:2px dashed rgba(243,231,209,.22);
+  width:calc(100% - 24px);height:calc(100% - 24px);
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ---------- Section héros ---------- */
+.hero{
+  position:relative;background:var(--red);overflow:hidden;
+  padding:clamp(120px,13vw,170px) clamp(16px,5vw,64px) clamp(48px,7vw,84px);
+}
+.hero-texture{
+  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:repeating-linear-gradient(58deg,rgba(22,17,15,.13) 0 2px,transparent 2px 26px);
+}
+.hero-glow{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(90% 70% at 12% 10%,rgba(255,255,255,.1) 0%,transparent 60%),
+             radial-gradient(80% 80% at 100% 100%,rgba(22,17,15,.28) 0%,transparent 65%);
+}
+.hero-grid{
+  position:relative;z-index:1;max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));
+  gap:clamp(30px,4vw,56px);align-items:center;
+  animation:riseIn .8s ease both;
+}
+.hero-tag{
+  display:inline-block;padding:8px 16px;background:var(--ink);color:var(--cream);
+  font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  white-space:nowrap;margin-bottom:32px;
+}
+.hero-title{
+  margin:0;font-family:var(--display);font-weight:400;
+  font-size:clamp(56px,9vw,122px);line-height:.86;letter-spacing:.005em;
+  text-transform:uppercase;color:var(--cream);text-shadow:0 6px 0 rgba(22,17,15,.22);
+}
+.hero-script{
+  display:inline-block;margin-top:6px;font-family:var(--script);
+  font-size:clamp(28px,4vw,54px);line-height:1;color:var(--ink);
+  transform:rotate(-4deg);transform-origin:left center;white-space:nowrap;
+}
+.hero-lede{
+  display:inline-block;max-width:46ch;margin:26px 0 0;padding:16px 20px;
+  background:var(--ink);color:#eae0d2;font-size:clamp(14px,1.2vw,16px);line-height:1.6;
+}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:30px}
+.btn-order{
+  display:inline-flex;align-items:center;gap:12px;padding:18px 34px;
+  background:var(--ink);color:var(--cream);font-family:var(--display);
+  font-size:clamp(15px,1.5vw,19px);letter-spacing:.06em;text-transform:uppercase;
+  box-shadow:6px 6px 0 rgba(22,17,15,.28);transition:background .15s,color .15s;
+}
+.btn-order:hover{background:var(--cream);color:var(--red)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;padding-bottom:4px;
+  font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cream);border-bottom:2px solid rgba(249,241,228,.55);transition:color .15s,border-color .15s;
+}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+.hero-note{
+  display:flex;align-items:center;gap:10px;margin-top:26px;
+  font-size:13px;font-weight:500;letter-spacing:.06em;color:#fbe6df;
+}
+.hero-media{position:relative;min-width:0}
+.hero-frame{
+  position:relative;height:clamp(320px,42vw,520px);overflow:hidden;
+  border:3px solid var(--ink);box-shadow:12px 12px 0 rgba(22,17,15,.3);
+}
+.hero-stamp{
+  position:absolute;left:-16px;bottom:-22px;padding:12px 18px 13px;
+  background:var(--ink);color:var(--cream);border:3px solid var(--cream);
+  box-shadow:8px 8px 0 rgba(22,17,15,.32);transform:rotate(-3deg);text-align:center;
+}
+.hero-stamp-main{font-family:var(--display);font-size:26px;line-height:.95;letter-spacing:.02em;text-transform:uppercase}
+.hero-stamp-sub{margin-top:5px;font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red-light)}
+
+/* ---------- Bandeau défilant ---------- */
+.strip{background:var(--ink);color:var(--cream);padding:22px clamp(16px,5vw,64px);border-bottom:2px solid var(--red)}
+.strip-inner{
+  max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;gap:clamp(14px,3vw,40px);
+  font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-align:center;
+}
+.strip-sep{color:var(--red-light)}
+
+/* ---------- La maison ---------- */
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.stat{padding:16px 22px;background:var(--ink);color:var(--cream);min-width:108px}
+.stat--red{background:var(--red)}
+.stat-num{font-family:var(--display);font-size:30px;line-height:1;letter-spacing:.01em}
+.stat-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red-light);margin-top:6px}
+.stat--red .stat-label{color:var(--cream)}
+.prose{display:flex;flex-direction:column;gap:18px;margin-top:24px;font-size:16px;line-height:1.7;color:#453a32;max-width:56ch}
+.prose p{margin:0}
+.mosaic{
+  min-width:0;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-template-rows:190px 190px;gap:12px;
+}
+.mosaic-cell{position:relative;overflow:hidden;border:3px solid var(--ink)}
+.mosaic-cell--tall{grid-row:span 2}
+
+/* ---------- Notre cuisine ---------- */
+.section-head{text-align:center;max-width:640px;margin:0 auto clamp(40px,5vw,64px)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(20px,2.6vw,30px)}
+.card{
+  min-width:0;display:flex;flex-direction:column;
+  background:var(--sand-soft);color:var(--text-dark);
+  border:3px solid var(--ink);box-shadow:8px 8px 0 var(--red);
+}
+.card-media{position:relative;height:190px;overflow:hidden;border-bottom:3px solid var(--ink)}
+.card-body{padding:26px 24px 30px}
+.card-kicker{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.card-title{margin:12px 0 0;font-family:var(--display);font-weight:400;font-size:25px;line-height:1.08;text-transform:uppercase;letter-spacing:.01em}
+.card-text{margin:12px 0 0;font-size:15px;line-height:1.65;color:var(--text-muted)}
+
+/* ---------- Avis ---------- */
+.reviews-head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:22px;margin-bottom:clamp(30px,4vw,48px);
+}
+.btn-google{
+  display:inline-flex;align-items:center;gap:12px;padding:14px 22px;
+  background:var(--ink);color:var(--cream);font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;
+}
+.btn-google:hover{background:var(--cream);color:var(--red)}
+.stars{letter-spacing:2px}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(18px,2.4vw,24px)}
+.review{min-width:0;margin:0;padding:28px 26px;background:var(--ink);display:flex;flex-direction:column;gap:16px}
+.review-stars{color:var(--red-light);font-size:14px;letter-spacing:3px}
+.review blockquote{margin:0;font-size:18px;line-height:1.55;color:var(--cream)}
+.review figcaption{margin-top:auto;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#a89a90}
+
+/* ---------- Horaires & infos ---------- */
+.panel{background:var(--ink);color:var(--cream);border:3px solid var(--ink);box-shadow:14px 14px 0 rgba(207,46,42,.85)}
+.panel-grid{
+  padding:clamp(28px,4vw,54px);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));
+  gap:clamp(30px,4vw,58px);align-items:stretch;
+}
+.panel-col{min-width:0;display:flex;flex-direction:column}
+.panel-col--gap{gap:26px}
+.panel .eyebrow{align-self:flex-start}
+.panel .title{color:var(--cream);font-size:clamp(30px,3.8vw,46px);line-height:.95}
+.panel .script{color:var(--red-light);margin-top:6px;font-size:clamp(24px,3vw,38px)}
+.days{display:flex;flex-direction:column;margin-top:26px}
+.day{
+  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  padding:11px 0;border-bottom:1px solid rgba(243,231,209,.14);
+}
+.day-name{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cream)}
+.day-hours{font-family:var(--display);font-size:17px;letter-spacing:.02em;color:var(--red-light);font-variant-numeric:tabular-nums}
+.sub-title{margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red-light)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:9px 15px;border:1px solid rgba(243,231,209,.35);color:var(--cream);font-size:12px;font-weight:600;white-space:nowrap}
+.chip--solid{background:var(--red);border-color:var(--red)}
+.callout{padding:22px 24px;background:rgba(243,231,209,.07);border-left:3px solid var(--red)}
+.callout p{margin:0;font-size:15px;line-height:1.65;color:var(--cream)}
+.callout a{color:var(--red-light)}
+
+/* ---------- Adresse ---------- */
+.address-title{color:var(--cream);font-size:clamp(30px,4vw,50px)}
+.address-title span{color:var(--red-light)}
+.contact-list{display:flex;flex-direction:column;margin-top:28px}
+.contact-row{
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:15px 0;border-bottom:2px solid rgba(249,241,228,.14);color:var(--cream);transition:color .15s;
+}
+.contact-row:hover{color:var(--red-light)}
+.contact-label{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#a89a90}
+.contact-value{font-family:var(--display);font-size:22px;letter-spacing:.02em}
+.contact-value--mail{font-family:var(--body);font-size:14px;word-break:break-all}
+.btn-map{
+  display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:17px 32px;
+  background:var(--red);color:var(--cream);font-family:var(--display);font-size:17px;
+  letter-spacing:.05em;text-transform:uppercase;box-shadow:6px 6px 0 rgba(249,241,228,.18);
+  transition:background .15s,color .15s;
+}
+.btn-map:hover{background:var(--cream);color:var(--red)}
+.map{position:relative;min-width:0;overflow:hidden;border:3px solid var(--sand);height:clamp(300px,42vw,440px)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.05)}
+
+/* ---------- Pied de page ---------- */
+.site-footer{padding:clamp(48px,7vw,80px) clamp(16px,5vw,64px) 30px;background:var(--red);color:var(--cream)}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:32px;align-items:start}
+.footer-logo{display:flex;align-items:baseline;gap:7px}
+.footer-logo-word{font-family:var(--brand);font-size:16px;font-weight:600;color:var(--ink)}
+.footer-logo-name{font-family:var(--display);font-size:28px;text-transform:uppercase;letter-spacing:.04em;color:var(--cream)}
+.footer-text{margin:12px 0 0;font-size:14px;line-height:1.65}
+.footer-col{min-width:0;display:flex;flex-direction:column;gap:9px;font-size:14px}
+.footer-head{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+.footer-link{color:var(--cream);align-self:flex-start;border-bottom:1px solid rgba(249,241,228,.5);word-break:break-all}
+.footer-link:hover{color:var(--ink);border-color:var(--ink)}
+.footer-bottom{
+  margin-top:40px;padding-top:20px;border-top:2px solid rgba(22,17,15,.25);
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;font-weight:600;
+}
+
+/* ---------- Adaptations mobiles ---------- */
+@media (max-width:900px){
+  .site-header{gap:12px}
+  .nav-link{display:none}
+  .mosaic{grid-template-rows:150px 150px}
+}
+@media (max-width:520px){
+  .logo-sub{display:none}
+  .nav-phone{padding:10px 14px;font-size:11px}
+  .hero-stamp{left:0;bottom:-16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sélecteur de langue : ces deux boutons radio pilotent tout le site en CSS pur -->
+<input type="radio" name="lang" id="lang-fr" class="lang-input" checked>
+<input type="radio" name="lang" id="lang-en" class="lang-input">
+
+<div class="page">
+
+  <header class="site-header">
+    <a class="logo" href="#top">
+      <span class="logo-bar"></span>
+      <span class="logo-stack">
+        <span class="logo-line">
+          <span class="logo-word">Délices</span>
+          <span class="logo-name">Istanbul</span>
+        </span>
+        <span class="logo-sub">Depuis 2010 — Bondy</span>
+      </span>
+    </a>
+
+    <nav class="site-nav">
+      <a class="nav-link" href="#maison"><span class="i18n fr">La maison</span><span class="i18n en">About</span></a>
+      <a class="nav-link" href="#cuisine"><span class="i18n fr">Notre cuisine</span><span class="i18n en">Our food</span></a>
+      <a class="nav-link" href="#infos"><span class="i18n fr">Horaires</span><span class="i18n en">Hours</span></a>
+      <a class="nav-link" href="#adresse"><span class="i18n fr">Nous trouver</span><span class="i18n en">Find us</span></a>
+      <span class="lang-switch">
+        <label class="lang-btn" for="lang-fr">FR</label>
+        <label class="lang-btn" for="lang-en">EN</label>
+      </span>
+      <a class="nav-phone" href="tel:+33148474526">01 48 47 45 26</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-texture"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-grid">
+      <div class="col">
+        <span class="hero-tag">
+          <span class="i18n fr">Restaurant turc · Bondy</span><span class="i18n en">Turkish restaurant · Bondy</span>
+        </span>
+
+        <div style="position:relative">
+          <h1 class="hero-title">Délices<br>Istanbul</h1>
+          <span class="hero-script">100% halal</span>
+        </div>
+
+        <p class="hero-lede">
+          <span class="i18n fr">Grillades au charbon, pain sorti du four, épices d'Anatolie — une cuisine turque simple et généreuse, à deux pas du centre de Bondy.</span><span class="i18n en">Charcoal grills, bread straight from the oven, Anatolian spices — simple, generous Turkish cooking in the heart of Bondy.</span>
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-order" href="tel:+33148474526">
+            <span class="i18n fr">Commander · 01 48 47 45 26</span><span class="i18n en">Order · +33 1 48 47 45 26</span>
+          </a>
+          <a class="btn-ghost" href="#adresse">
+            <span class="i18n fr">Nous trouver</span><span class="i18n en">Find us</span>
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span class="i18n fr">Ouvert 7j/7 · 11h00 – 23h30 · sur place &amp; à emporter</span><span class="i18n en">Open 7 days · 11:00 AM – 11:30 PM · eat in &amp; takeaway</span>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="hero-frame">
+          <div class="photo">
+            <!-- Remplacez la ligne suivante par : <img src="images/hero.jpg" alt="Assiette de grillades"> -->
+            <p class="photo-hint">Photo du plat signature sur fond neutre — kebab, assiette grillades…</p>
+          </div>
+        </div>
+        <div class="hero-stamp">
+          <div class="hero-stamp-main">100% Halal</div>
+          <div class="hero-stamp-sub">Depuis 2010</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip-inner">
+      <span class="i18n fr">
+        <span>100 % Halal</span><span class="strip-sep">◆</span>
+        <span>À emporter</span><span class="strip-sep">◆</span>
+        <span>Terrasse</span><span class="strip-sep">◆</span>
+        <span>Tickets Restaurant®</span><span class="strip-sep">◆</span>
+        <span>Sans réservation</span>
+      </span>
+      <span class="i18n en">
+        <span>100% Halal</span><span class="strip-sep">◆</span>
+        <span>Takeaway</span><span class="strip-sep">◆</span>
+        <span>Outside seating</span><span class="strip-sep">◆</span>
+        <span>Meal vouchers</span><span class="strip-sep">◆</span>
+        <span>No booking needed</span>
+      </span>
+    </div>
+  </div>
+
+  <section class="section section--sand" id="maison">
+    <div class="wrap split">
+      <div class="col">
+        <span class="eyebrow">
+          <span class="i18n fr">La maison · depuis 2010</span><span class="i18n en">The house · since 2010</span>
+        </span>
+        <h2 class="title">
+          <span class="i18n fr">La table de quartier<br>qui a le goût du voyage</span><span class="i18n en">A neighbourhood table<br>with the taste of travel</span>
+        </h2>
+        <span class="script">
+          <span class="i18n fr">le vrai goût d'Istanbul</span><span class="i18n en">the real taste of Istanbul</span>
+        </span>
+
+        <div class="prose">
+          <span class="i18n fr">
+            <p>Chez Délices Istanbul, tout part du grill : viandes marinées le matin, légumes grillés à la commande, pain chaud et sauces maison. Rien de compliqué — simplement des produits soignés et des recettes que l'on fait depuis toujours en famille.</p>
+            <p>On vient ici pour une pause déjeuner tranquille, un dîner en famille ou un repas à emporter en rentrant. Le service est rapide, les prix restent raisonnables, et l'accueil est le même pour tout le monde.</p>
+          </span>
+          <span class="i18n en">
+            <p>At Délices Istanbul everything starts at the grill: meats marinated in the morning, vegetables charred to order, warm bread and house-made sauces. Nothing complicated — careful ingredients and recipes our family has always cooked.</p>
+            <p>Come for a quiet lunch break, a family dinner, or a meal to take home on the way back. Service is quick, prices stay reasonable, and everyone gets the same welcome.</p>
+          </span>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">7/7</div>
+            <div class="stat-label"><span class="i18n fr">Ouvert</span><span class="i18n en">Open</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">11H–23H30</div>
+            <div class="stat-label"><span class="i18n fr">Service continu</span><span class="i18n en">All day</span></div>
+          </div>
+          <div class="stat stat--red">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Halal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mosaic">
+        <div class="mosaic-cell mosaic-cell--tall">
+          <div class="photo"><p class="photo-hint">Portrait — le grill / le chef au travail</p></div>
+        </div>
+        <div class="mosaic-cell">
+          <div class="photo"><p class="photo-hint">Salle ou terrasse</p></div>
+        </div>
+        <div class="mosaic-cell">
+          <div class="photo"><p class="photo-hint">Détail — pain, sauces, épices</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink" id="cuisine">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="i18n fr">Notre cuisine</span><span class="i18n en">Our food</span></span>
+        <h2 class="title">
+          <span class="i18n fr">Trois bonnes raisons<br>de pousser la porte</span><span class="i18n en">Three good reasons<br>to step inside</span>
+        </h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-media">
+            <div class="photo"><p class="photo-hint"><span class="i18n fr">Photo — viande sur le grill</span><span class="i18n en">Photo — meat on the grill</span></p></div>
+          </div>
+          <div class="card-body">
+            <div class="card-kicker"><span class="i18n fr">Grillades</span><span class="i18n en">Grill</span></div>
+            <h3 class="card-title"><span class="i18n fr">Le charbon, rien d'autre</span><span class="i18n en">Charcoal, nothing else</span></h3>
+            <p class="card-text"><span class="i18n fr">Kebabs, brochettes et grillades préparées à la minute. La viande est marinée chez nous, jamais la veille pour le lendemain.</span><span class="i18n en">Kebabs, skewers and grills cooked to order. We marinate the meat ourselves, fresh every day.</span></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="photo"><p class="photo-hint"><span class="i18n fr">Photo — plat servi à table</span><span class="i18n en">Photo — a plate at the table</span></p></div>
+          </div>
+          <div class="card-body">
+            <div class="card-kicker">Halal</div>
+            <h3 class="card-title"><span class="i18n fr">Une cuisine 100 % halal</span><span class="i18n en">100% halal kitchen</span></h3>
+            <p class="card-text"><span class="i18n fr">Toute notre viande est certifiée halal. Vous mangez tranquille, sans avoir à poser la question.</span><span class="i18n en">All of our meat is halal certified, so you can eat with complete peace of mind.</span></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="photo"><p class="photo-hint"><span class="i18n fr">Photo — commande à emporter</span><span class="i18n en">Photo — takeaway order</span></p></div>
+          </div>
+          <div class="card-body">
+            <div class="card-kicker"><span class="i18n fr">À emporter</span><span class="i18n en">Takeaway</span></div>
+            <h3 class="card-title"><span class="i18n fr">Prêt en quelques minutes</span><span class="i18n en">Ready in minutes</span></h3>
+            <p class="card-text"><span class="i18n fr">Un appel avant de partir du travail, et votre commande vous attend, chaude, emballée, prête à partir.</span><span class="i18n en">One call before you leave work and your order is waiting — hot, wrapped and ready to go.</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--red">
+    <div class="stripes"></div>
+    <div class="wrap" style="position:relative">
+      <div class="reviews-head">
+        <div class="col">
+          <span class="eyebrow"><span class="i18n fr">Ils en parlent</span><span class="i18n en">Reviews</span></span>
+          <h2 class="title" style="color:var(--cream)">
+            <span class="i18n fr">Avis de nos clients</span><span class="i18n en">What our guests say</span>
+          </h2>
+        </div>
+        <a class="btn-google" href="https://www.google.com/search?q=D%C3%A9lices%20Istanbul%20Bondy%20rue%20auguste%20polissard%2027" target="_blank" rel="noopener">
+          <span class="stars">★★★★★</span>
+          <span class="i18n fr">Voir sur Google</span><span class="i18n en">See on Google</span>
+        </a>
+      </div>
+
+      <div class="reviews">
+        <figure class="review">
+          <span class="review-stars">★★★★★</span>
+          <blockquote><span class="i18n fr">« Le meilleur kebab du coin, et de loin. Viande goûteuse, pain frais, portions généreuses. »</span><span class="i18n en">“The best kebab around, by far. Tasty meat, fresh bread, generous portions.”</span></blockquote>
+          <figcaption><span class="i18n fr">Avis Google · à remplacer</span><span class="i18n en">Google review · replace</span></figcaption>
+        </figure>
+
+        <figure class="review">
+          <span class="review-stars">★★★★★</span>
+          <blockquote><span class="i18n fr">« Accueil très sympathique et service rapide, même le midi quand c'est plein. »</span><span class="i18n en">“Very friendly welcome and fast service, even at a busy lunchtime.”</span></blockquote>
+          <figcaption><span class="i18n fr">Avis Google · à remplacer</span><span class="i18n en">Google review · replace</span></figcaption>
+        </figure>
+
+        <figure class="review">
+          <span class="review-stars">★★★★★</span>
+          <blockquote><span class="i18n fr">« Prix très corrects pour la qualité. On y retourne toutes les semaines en famille. »</span><span class="i18n en">“Great value for the quality. We come back every week as a family.”</span></blockquote>
+          <figcaption><span class="i18n fr">Avis Google · à remplacer</span><span class="i18n en">Google review · replace</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sand" id="infos">
+    <div class="wrap">
+      <div class="panel">
+        <div class="panel-grid">
+
+          <div class="panel-col">
+            <span class="eyebrow eyebrow--red"><span class="i18n fr">Horaires</span><span class="i18n en">Hours</span></span>
+            <h2 class="title">
+              <span class="i18n fr">Ouvert<br>tous les jours</span><span class="i18n en">Open<br>every day</span>
+            </h2>
+            <span class="script">
+              <span class="i18n fr">service continu</span><span class="i18n en">all day long</span>
+            </span>
+
+            <div class="days">
+              <div class="day">
+                <span class="day-name"><span class="i18n fr">Lundi</span><span class="i18n en">Monday</span></span>
+                <span class="day-hours"><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></span>
+              </div>
+              <div class="day">
+                <span class="day-name"><span class="i18n fr">Mardi</span><span class="i18n en">Tuesday</span></span>
+                <span class="day-hours"><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></span>
+              </div>
+              <div class="day">
+                <span class="day-name"><span class="i18n fr">Mercredi</span><span class="i18n en">Wednesday</span></span>
+                <span class="day-hours"><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></span>
+              </div>
+              <div class="day">
+                <span class="day-name"><span class="i18n fr">Jeudi</span><span class="i18n en">Thursday</span></span>
+                <span class="day-hours"><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></span>
+              </div>
+              <div class="day">
+                <span class="day-name"><span class="i18n fr">Vendredi</span><span class="i18n en">Friday</span></span>
+                <span class="day-hours"><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></span>
+              </div>
+              <div class="day">
+                <span class="day-name"><span class="i18n fr">Samedi</span><span class="i18n en">Saturday</span></span>
+                <span class="day-hours"><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></span>
+              </div>
+              <div class="day">
+                <span class="day-name"><span class="i18n fr">Dimanche</span><span class="i18n en">Sunday</span></span>
+                <span class="day-hours"><span class="i18n fr">11h00 – 23h30</span><span class="i18n en">11:00 AM – 11:30 PM</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-col panel-col--gap">
+            <div>
+              <h3 class="sub-title"><span class="i18n fr">Moyens de paiement</span><span class="i18n en">Payment options</span></h3>
+              <div class="chips">
+                <span class="chip"><span class="i18n fr">Espèces</span><span class="i18n en">Cash</span></span>
+                <span class="chip"><span class="i18n fr">Sans contact</span><span class="i18n en">Contactless</span></span>
+                <span class="chip"><span class="i18n fr">Carte bancaire</span><span class="i18n en">Debit card</span></span>
+                <span class="chip">VISA</span>
+                <span class="chip">Mastercard</span>
+                <span class="chip">Ticket Restaurant®</span>
+                <span class="chip"><span class="i18n fr">Titres-restaurant</span><span class="i18n en">Meal vouchers</span></span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="sub-title">Services</h3>
+              <div class="chips">
+                <span class="chip chip--solid"><span class="i18n fr">Terrasse</span><span class="i18n en">Outside seating</span></span>
+                <span class="chip chip--solid"><span class="i18n fr">À emporter</span><span class="i18n en">Takeaway</span></span>
+                <span class="chip chip--solid"><span class="i18n fr">Sur place</span><span class="i18n en">Eat in</span></span>
+                <span class="chip chip--solid"><span class="i18n fr">Sans réservation</span><span class="i18n en">No booking</span></span>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p>
+                <span class="i18n fr">Pas besoin de réserver : passez quand vous voulez pendant nos heures d'ouverture. Pour une commande à emporter, un simple appel au <a href="tel:+33148474526">01 48 47 45 26</a> suffit.</span><span class="i18n en">No booking required — just drop in during opening hours. For takeaway, one call to <a href="tel:+33148474526">+33 1 48 47 45 26</a> is enough.</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink" id="adresse">
+    <div class="wrap split">
+      <div class="col">
+        <span class="eyebrow"><span class="i18n fr">Nous trouver</span><span class="i18n en">Find us</span></span>
+        <h2 class="title address-title">27 rue Auguste Polissard<br><span>93140 Bondy</span></h2>
+
+        <div class="contact-list">
+          <a class="contact-row" href="tel:+33148474526">
+            <span class="contact-label"><span class="i18n fr">Téléphone</span><span class="i18n en">Phone</span></span>
+            <span class="contact-value">01 48 47 45 26</span>
+          </a>
+          <a class="contact-row" href="mailto:erkam-goezetlik@yahoo.fr">
+            <span class="contact-label">E-mail</span>
+            <span class="contact-value contact-value--mail">erkam-goezetlik@yahoo.fr</span>
+          </a>
+        </div>
+
+        <a class="btn-map" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.9041432,2.4805542" target="_blank" rel="noopener">
+          <span class="i18n fr">Ouvrir l'itinéraire</span><span class="i18n en">Get directions</span>
+        </a>
+      </div>
+
+      <div class="map">
+        <iframe title="Carte — 27 rue Auguste Polissard, Bondy" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=2.4735%2C48.9006%2C2.4876%2C48.9077&amp;layer=mapnik&amp;marker=48.9041432%2C2.4805542"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="col">
+          <div class="footer-logo">
+            <span class="footer-logo-word">Délices</span>
+            <span class="footer-logo-name">Istanbul</span>
+          </div>
+          <p class="footer-text">
+            <span class="i18n fr">Restaurant turc halal à Bondy.<br>Sur place et à emporter, 7j/7.</span><span class="i18n en">Halal Turkish restaurant in Bondy.<br>Eat in or take away, 7 days a week.</span>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head"><span class="i18n fr">Coordonnées</span><span class="i18n en">Contact</span></span>
+          <span>27 rue Auguste Polissard, 93140 Bondy</span>
+          <a class="footer-link" href="tel:+33148474526">01 48 47 45 26</a>
+          <a class="footer-link" href="mailto:erkam-goezetlik@yahoo.fr">erkam-goezetlik@yahoo.fr</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head"><span class="i18n fr">Mentions légales</span><span class="i18n en">Legal</span></span>
+          <span>Al-me — SIREN 520 365 552</span>
+          <span>RCS Bobigny</span>
+          <span><span class="i18n fr">Responsable : Yilmaz Ali</span><span class="i18n en">Manager: Yilmaz Ali</span></span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Délices Istanbul — Al-me</span>
+        <span><span class="i18n fr">Ouvert tous les jours 11h00 – 23h30</span><span class="i18n en">Open daily 11:00 AM – 11:30 PM</span></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Délices Istanbul",
+  "servesCuisine": "Turque",
+  "priceRange": "€",
+  "telephone": "+33148474526",
+  "email": "erkam-goezetlik@yahoo.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "27 rue Auguste Polissard",
+    "postalCode": "93140",
+    "addressLocality": "Bondy",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 48.9041432, "longitude": 2.4805542 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "11:00",
+    "closes": "23:30"
+  }]
+}
+</script>
+
+</body>
+</html>

@@ -1,14 +1,22 @@
 ---
 interface Props {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
+  /** Échelle typographique, indépendante du niveau sémantique. */
+  size?: 'hero' | 'default' | 'panel' | 'address';
+  /** `cream` force la couleur claire sur les fonds rouges ou encrés. */
+  tone?: 'inherit' | 'cream';
   class?: string;
-  style?: string;
 }
-const { level = 2, class: className = "", style = "" } = Astro.props;
+const {
+  level = 2,
+  size = level === 1 ? 'hero' : 'default',
+  tone = 'inherit',
+  class: className,
+} = Astro.props;
 const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 ---
 
-<Tag class:list={["heading", `heading--${level}`, className]} style={style}>
+<Tag class:list={['heading', `heading--${size}`, `heading--tone-${tone}`, className]}>
   <slot />
 </Tag>
 
@@ -21,26 +29,26 @@ const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     letter-spacing: 0.01em;
     line-height: 0.98;
   }
-  .heading--1 {
+  .heading--hero {
     font-size: var(--font-size-hero);
     line-height: 0.86;
     letter-spacing: 0.005em;
     color: var(--color-cream);
-    text-shadow: 0 6px 0 rgba(22, 17, 15, .22);
+    text-shadow: 0 6px 0 rgba(22, 17, 15, 0.22);
   }
-  .heading--2 {
+  .heading--default {
     font-size: var(--font-size-title);
   }
-  .heading--3 {
-    font-size: var(--font-size-4xl);
+  /* Titre du panneau « Horaires » : plus compact que le titre courant. */
+  .heading--panel {
+    font-size: var(--font-size-title-panel);
+    line-height: 0.95;
   }
-  .heading--4 {
-    font-size: var(--font-size-3xl);
+  /* Titre de la section « Nous trouver ». */
+  .heading--address {
+    font-size: var(--font-size-title-address);
   }
-  .heading--5 {
-    font-size: var(--font-size-2xl);
-  }
-  .heading--6 {
-    font-size: var(--font-size-xl);
+  .heading--tone-cream {
+    color: var(--color-cream);
   }
 </style>

@@ -22,19 +22,19 @@ import FeatureCard from "../molecules/FeatureCard.astro";
     <div class="cards">
       <FeatureCard
         kicker={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Grillades</span>
             <span class="i18n en">Grill</span>
-          </span>
+          </>
         )}
         title={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Le charbon, rien d'autre</span>
             <span class="i18n en">Charcoal, nothing else</span>
-          </span>
+          </>
         )}
         text={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">
               Kebabs, brochettes et grillades préparées à la minute. La viande
               est marinée chez nous, jamais la veille pour le lendemain.
@@ -43,25 +43,25 @@ import FeatureCard from "../molecules/FeatureCard.astro";
               Kebabs, skewers and grills cooked to order. We marinate the meat
               ourselves, fresh every day.
             </span>
-          </span>
+          </>
         )}
         imageAlt={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Photo — viande sur le grill</span>
             <span class="i18n en">Photo — meat on the grill</span>
-          </span>
+          </>
         )}
       />
       <FeatureCard
         kicker="Halal"
         title={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Une cuisine 100 % halal</span>
             <span class="i18n en">100% halal kitchen</span>
-          </span>
+          </>
         )}
         text={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">
               Toute notre viande est certifiée halal. Vous mangez tranquille,
               sans avoir à poser la question.
@@ -70,30 +70,30 @@ import FeatureCard from "../molecules/FeatureCard.astro";
               All of our meat is halal certified, so you can eat with complete
               peace of mind.
             </span>
-          </span>
+          </>
         )}
         imageAlt={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Photo — plat servi à table</span>
             <span class="i18n en">Photo — a plate at the table</span>
-          </span>
+          </>
         )}
       />
       <FeatureCard
         kicker={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">À emporter</span>
             <span class="i18n en">Takeaway</span>
-          </span>
+          </>
         )}
         title={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Prêt en quelques minutes</span>
             <span class="i18n en">Ready in minutes</span>
-          </span>
+          </>
         )}
         text={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">
               Un appel avant de partir du travail, et votre commande vous
               attend, chaude, emballée, prête à partir.
@@ -102,24 +102,20 @@ import FeatureCard from "../molecules/FeatureCard.astro";
               One call before you leave work and your order is waiting — hot,
               wrapped and ready to go.
             </span>
-          </span>
+          </>
         )}
         imageAlt={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Photo — commande à emporter</span>
             <span class="i18n en">Photo — takeaway order</span>
-          </span>
+          </>
         )}
       />
     </div>
   </div>
 </section>
 
-<style lang="css">
-  .section--ink {
-    background: var(--color-ink);
-    color: var(--color-cream);
-  }
+<style>
   .section-head {
     text-align: center;
     max-width: 640px;

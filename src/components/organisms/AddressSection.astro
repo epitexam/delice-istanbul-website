@@ -11,8 +11,10 @@ import ContactRow from "../molecules/ContactRow.astro";
                 <span class="i18n fr">Nous trouver</span>
                 <span class="i18n en">Find us</span>
             </Eyebrow>
-            <Heading level={2} class="address-title"
-                >27 rue Auguste Polissard<br /><span>93140 Bondy</span></Heading
+            <Heading level={2} size="address" tone="cream"
+                >27 rue Auguste Polissard<br /><span class="address-city"
+                    >93140 Bondy</span
+                ></Heading
             >
 
             <div class="contact-list">
@@ -57,7 +59,7 @@ import ContactRow from "../molecules/ContactRow.astro";
 </section>
 
 <style>
-    .address-title span {
+    .address-city {
         color: var(--color-red-light);
     }
     .contact-list {

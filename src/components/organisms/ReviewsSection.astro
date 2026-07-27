@@ -13,8 +13,7 @@ import ReviewCard from "../molecules/ReviewCard.astro";
           <span class="i18n fr">Ils en parlent</span>
           <span class="i18n en">Reviews</span>
         </Eyebrow>
-        <!-- style passé en prop -->
-        <Heading level={2} class="heading-cream">
+        <Heading level={2} tone="cream">
           <span class="i18n fr">Avis de nos clients</span>
           <span class="i18n en">What our guests say</span>
         </Heading>
@@ -35,7 +34,7 @@ import ReviewCard from "../molecules/ReviewCard.astro";
       <ReviewCard
         stars={5}
         quote={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">
               « Le meilleur kebab du coin, et de loin. Viande goûteuse, pain
               frais, portions généreuses. »
@@ -44,19 +43,19 @@ import ReviewCard from "../molecules/ReviewCard.astro";
               “The best kebab around, by far. Tasty meat, fresh bread, generous
               portions.”
             </span>
-          </span>
+          </>
         )}
         author={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Avis Google · à remplacer</span>
             <span class="i18n en">Google review · replace</span>
-          </span>
+          </>
         )}
       />
       <ReviewCard
         stars={5}
         quote={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">
               « Accueil très sympathique et service rapide, même le midi quand
               c'est plein. »
@@ -65,19 +64,19 @@ import ReviewCard from "../molecules/ReviewCard.astro";
               “Very friendly welcome and fast service, even at a busy
               lunchtime.”
             </span>
-          </span>
+          </>
         )}
         author={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Avis Google · à remplacer</span>
             <span class="i18n en">Google review · replace</span>
-          </span>
+          </>
         )}
       />
       <ReviewCard
         stars={5}
         quote={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">
               « Prix très corrects pour la qualité. On y retourne toutes les
               semaines en famille. »
@@ -86,13 +85,13 @@ import ReviewCard from "../molecules/ReviewCard.astro";
               “Great value for the quality. We come back every week as a
               family.”
             </span>
-          </span>
+          </>
         )}
         author={(
-          <span style="display:contents">
+          <>
             <span class="i18n fr">Avis Google · à remplacer</span>
             <span class="i18n en">Google review · replace</span>
-          </span>
+          </>
         )}
       />
     </div>
@@ -100,12 +99,6 @@ import ReviewCard from "../molecules/ReviewCard.astro";
 </section>
 
 <style>
-  .section--red {
-    position: relative;
-    overflow: hidden;
-    background: var(--color-red);
-    color: var(--color-cream);
-  }
   .stripes {
     position: absolute;
     inset: 0;
@@ -153,7 +146,4 @@ import ReviewCard from "../molecules/ReviewCard.astro";
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: clamp(18px, 2.4vw, 24px);
   }
-  .heading-cream {
-  color: var(--color-cream);
-}
 </style>

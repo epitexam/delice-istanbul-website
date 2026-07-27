@@ -35,11 +35,3 @@
   outline: 3px solid var(--color-focus-ring);
   outline-offset: 3px;
 }
-
-:root {
-  --header-height: 90px;
-}
-
-.page {
-  padding-top: var(--header-height);
-}

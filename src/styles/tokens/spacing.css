@@ -11,4 +11,7 @@
 
   --container-max-width: 1240px;
   --container-padding-inline: clamp(16px, 5vw, 64px);
+
+  /* Décalage des ancres sous l'en-tête fixe. */
+  --header-height: 90px;
 }

@@ -15,11 +15,11 @@ import DaySchedule from "../molecules/DaySchedule.astro";
             <span class="i18n fr">Horaires</span>
             <span class="i18n en">Hours</span>
           </Eyebrow>
-          <Heading level={2}>
+          <Heading level={2} size="panel" tone="cream">
             <span class="i18n fr">Ouvert<br />tous les jours</span>
             <span class="i18n en">Open<br />every day</span>
           </Heading>
-          <ScriptText size="small">
+          <ScriptText size="small" color="red-light">
             <span class="i18n fr">service continu</span>
             <span class="i18n en">all day long</span>
           </ScriptText>
@@ -95,12 +95,12 @@ import DaySchedule from "../molecules/DaySchedule.astro";
   </div>
 </section>
 
-<style lang="css">
+<style>
   .panel {
     background: var(--color-ink);
     color: var(--color-cream);
     border: 3px solid var(--color-ink);
-    box-shadow: 14px 14px 0 rgba(207, 46, 42, 0.85);
+    box-shadow: var(--shadow-panel);
   }
   .panel-grid {
     padding: clamp(28px, 4vw, 54px);
@@ -116,6 +116,16 @@ import DaySchedule from "../molecules/DaySchedule.astro";
   }
   .panel-col--gap {
     gap: 26px;
+  }
+  /* Le surtitre est un élément flex : sans cela son aplat rouge
+     s'étirerait sur toute la largeur de la colonne. */
+  .panel-col > :global(.eyebrow) {
+    align-self: flex-start;
+  }
+  .days {
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
   }
   .sub-title {
     margin: 0 0 14px;

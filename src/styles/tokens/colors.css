@@ -1,5 +1,5 @@
 /* ============================================================
-   PALETTE BRUTE — valeurs exactes du HTML source
+   PALETTE BRUTE — valeurs exactes du design de référence
    ============================================================ */
 :root {
   --color-red: #cf2e2a;
@@ -8,9 +8,16 @@
   --color-cream: #f3e7d1;
   --color-sand: #e4d5b9;
   --color-sand-soft: #efe2cb;
+
+  /* Nuances de texte : le corps de page utilise --color-text,
+     légèrement plus chaud que le crème réservé aux aplats. */
+  --color-text: #eaddc8;
   --color-text-dark: #231c18;
   --color-text-muted: #514539;
+  --color-text-subtle: #ded4ca; /* liens de navigation, boutons de langue */
+  --color-text-faint: #a89a90; /* libellés secondaires, signatures d'avis */
   --color-grey: #b5a9a0;
+
   --color-white: #ffffff;
   --color-black: #000000;
 
@@ -18,6 +25,7 @@
      TOKENS SÉMANTIQUES — utilisés dans les composants
      ============================================================ */
   --color-primary: var(--color-red);
+  --color-primary-light: var(--color-red-light);
   --color-primary-hover: var(--color-red-light);
   --color-primary-on: var(--color-cream);
 
@@ -25,7 +33,7 @@
   --color-background-light: var(--color-sand);
   --color-background-surface: var(--color-sand-soft);
 
-  --color-text-on-dark: var(--color-cream);
+  --color-text-on-dark: var(--color-text);
   --color-text-on-light: var(--color-text-dark);
   --color-text-muted-on-light: var(--color-text-muted);
 

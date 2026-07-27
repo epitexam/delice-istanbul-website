@@ -73,17 +73,13 @@ const { title = 'Délices Istanbul — Restaurant turc halal à Bondy', descript
 </html>
 
 <style>
+  /* Les deux boutons radio pilotent la langue en CSS pur : on les retire
+     du flux sans les masquer complètement, pour conserver le focus clavier. */
   .lang-input {
     position: absolute;
     width: 1px;
     height: 1px;
     opacity: 0;
     pointer-events: none;
-  }
-  :root {
-    --header-height: 90px;
-  }
-  .page {
-    padding-top: var(--header-height);
   }
 </style>
