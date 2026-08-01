@@ -15,7 +15,7 @@ const { stars, quote, author } = Astro.props;
 <style>
 .review {
   margin: 0;
-  padding: 28px 26px;
+  padding: clamp(18px, 3vw, 28px) clamp(16px, 3vw, 26px);
   background: var(--color-ink);
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ const { stars, quote, author } = Astro.props;
 }
 .review blockquote {
   margin: 0;
-  font-size: 18px;
+  font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.55;
   color: var(--color-cream);
 }

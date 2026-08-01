@@ -10,10 +10,10 @@ const { variant = 'default' } = Astro.props;
 
 <style>
 .badge {
-  padding: 9px 15px;
+  padding: clamp(7px, 1.2vw, 9px) clamp(11px, 1.5vw, 15px);
   border: 1px solid var(--color-border-cream-35);
   color: var(--color-cream);
-  font-size: 12px;
+  font-size: clamp(10px, 1.1vw, 12px);
   font-weight: 600;
   white-space: nowrap;
 }

@@ -9,6 +9,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -18,11 +21,16 @@ body {
   font-family: var(--font-family-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  min-width: 320px;
 }
 
-img {
+img,
+iframe,
+video,
+svg {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 a {
@@ -142,4 +150,32 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ============================================================
+   CORRECTIONS RESPONSIVE POUR TRÈS PETITS ÉCRANS
+   ============================================================ */
+@media (max-width: 360px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .section {
+    padding: clamp(48px, 13vw, 124px) clamp(12px, 5vw, 64px);
+  }
+  
+  .wrap {
+    padding: 0 clamp(12px, 5vw, 64px);
+  }
+  
+  .split {
+    gap: clamp(20px, 5vw, 72px);
+  }
+}
+
+/* Corrections pour tablettes et mobiles moyens */
+@media (max-width: 768px) and (min-width: 361px) {
+  .section {
+    padding: clamp(56px, 11vw, 124px) clamp(14px, 4vw, 64px);
+  }
 }

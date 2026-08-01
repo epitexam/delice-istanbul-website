@@ -61,7 +61,7 @@ import Stat from '../molecules/Stat.astro';
   font-size: 16px;
   line-height: 1.7;
   color: var(--color-text-prose);
-  max-width: 56ch;
+  max-width: min(56ch, 100%);
 }
 .prose p {
   margin: 0;
@@ -76,7 +76,7 @@ import Stat from '../molecules/Stat.astro';
   min-width: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-rows: 190px 190px;
+  grid-template-rows: clamp(140px, 20vw, 190px) clamp(140px, 20vw, 190px);
   gap: 12px;
 }
 .mosaic-cell {
@@ -89,7 +89,10 @@ import Stat from '../molecules/Stat.astro';
 }
 @media (max-width: 900px) {
   .mosaic {
-    grid-template-rows: 150px 150px;
+    grid-template-rows: clamp(120px, 20vw, 150px) clamp(120px, 20vw, 150px);
+  }
+  .prose {
+    font-size: 15px;
   }
 }
 </style>

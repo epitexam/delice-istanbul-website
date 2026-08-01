@@ -32,12 +32,13 @@ const { kicker, title, text, imageAlt } = Astro.props;
 }
 .card-media {
   position: relative;
-  height: 190px;
+  height: clamp(140px, 20vw, 190px);
+  min-height: 140px;
   overflow: hidden;
   border-bottom: 3px solid var(--color-ink);
 }
 .card-body {
-  padding: 26px 24px 30px;
+  padding: clamp(16px, 3vw, 26px) clamp(14px, 3vw, 24px) clamp(18px, 3vw, 30px);
 }
 .card-kicker {
   font-size: 10px;

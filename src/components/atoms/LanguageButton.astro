@@ -10,11 +10,11 @@ const { for: forId } = Astro.props;
 
 <style>
 .lang-btn {
-  padding: 6px 9px;
+  padding: clamp(5px, 1vw, 6px) clamp(7px, 1.2vw, 9px);
   border: 1px solid var(--color-border-cream-light-22);
   background: transparent;
   color: var(--color-text-subtle);
-  font-size: 11px;
+  font-size: clamp(10px, 1vw, 11px);
   font-weight: 600;
   letter-spacing: .1em;
   border-radius: var(--radius-sm);

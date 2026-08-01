@@ -116,8 +116,9 @@ import ReviewCard from "../molecules/ReviewCard.astro";
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 22px;
-    margin-bottom: clamp(30px, 4vw, 48px);
+    gap: 16px;
+    margin-bottom: clamp(24px, 4vw, 48px);
+    justify-content: center;
   }
   .btn-google {
     display: inline-flex;
@@ -143,7 +144,8 @@ import ReviewCard from "../molecules/ReviewCard.astro";
   }
   .reviews {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-    gap: clamp(18px, 2.4vw, 24px);
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: clamp(14px, 2.4vw, 24px);
+    justify-items: center;
   }
 </style>

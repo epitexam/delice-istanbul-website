@@ -105,8 +105,8 @@ import DaySchedule from "../molecules/DaySchedule.astro";
   .panel-grid {
     padding: clamp(28px, 4vw, 54px);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-    gap: clamp(30px, 4vw, 58px);
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(20px, 4vw, 58px);
     align-items: stretch;
   }
   .panel-col {
@@ -141,9 +141,20 @@ import DaySchedule from "../molecules/DaySchedule.astro";
     gap: 8px;
   }
   .callout {
-    padding: 22px 24px;
+    padding: 18px 20px;
     background: var(--color-bg-cream-light-07);
     border-left: 3px solid var(--color-red);
+  }
+  .callout p {
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .panel-grid {
+      gap: 20px;
+    }
+    .callout {
+      padding: 16px 18px;
+    }
   }
   .callout p {
     margin: 0;

@@ -16,7 +16,7 @@ const { day, hours } = Astro.props;
   align-items: baseline;
   justify-content: space-between;
   gap: 14px;
-  padding: 11px 0;
+  padding: clamp(8px, 1.5vw, 11px) 0;
   border-bottom: 1px solid var(--color-border-dark);
 }
 .day-name {
@@ -28,7 +28,7 @@ const { day, hours } = Astro.props;
 }
 .day-hours {
   font-family: var(--font-family-display);
-  font-size: 17px;
+  font-size: clamp(14px, 1.2vw, 17px);
   letter-spacing: .02em;
   color: var(--color-red-light);
   font-variant-numeric: tabular-nums;

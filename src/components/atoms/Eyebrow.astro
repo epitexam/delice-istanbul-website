@@ -17,13 +17,13 @@ const { variant = 'dark', size = 'default' } = Astro.props;
   text-transform: uppercase;
 }
 .eyebrow--size-default {
-  padding: 6px 13px;
-  font-size: 10px;
+  padding: clamp(5px, 1vw, 6px) clamp(10px, 1.2vw, 13px);
+  font-size: clamp(9px, 1vw, 10px);
   margin-bottom: 18px;
 }
 .eyebrow--size-hero {
-  padding: 8px 16px;
-  font-size: 11px;
+  padding: clamp(6px, 1.2vw, 8px) clamp(12px, 1.5vw, 16px);
+  font-size: clamp(10px, 1.1vw, 11px);
   margin-bottom: 32px;
   white-space: nowrap;
 }

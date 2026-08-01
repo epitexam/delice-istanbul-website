@@ -19,7 +19,7 @@ const Tag = href ? 'a' : 'div';
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  padding: 15px 0;
+  padding: clamp(10px, 1.5vw, 15px) 0;
   border-bottom: 2px solid var(--color-border-cream-14);
   color: var(--color-cream);
   transition: color var(--transition-fast);
@@ -36,7 +36,7 @@ const Tag = href ? 'a' : 'div';
 }
 .contact-value {
   font-family: var(--font-family-display);
-  font-size: 22px;
+  font-size: clamp(18px, 2vw, 22px);
   letter-spacing: .02em;
 }
 .contact-value--mail {

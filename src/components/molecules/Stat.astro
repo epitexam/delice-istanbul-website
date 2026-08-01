@@ -13,10 +13,10 @@ const { number, label, variant = 'default' } = Astro.props;
 
 <style>
 .stat {
-  padding: 16px 22px;
+  padding: clamp(12px, 2vw, 16px) clamp(14px, 2vw, 22px);
   background: var(--color-ink);
   color: var(--color-cream);
-  min-width: 108px;
+  min-width: min(108px, 100%);
 }
 .stat--red {
   background: var(--color-red);

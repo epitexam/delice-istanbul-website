@@ -38,13 +38,13 @@
 
 <style>
 .site-footer {
-  padding: clamp(48px, 7vw, 80px) clamp(16px, 5vw, 64px) 30px;
+  padding: clamp(36px, 7vw, 80px) clamp(16px, 5vw, 64px) clamp(20px, 4vw, 30px);
   background: var(--color-red);
   color: var(--color-cream);
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 32px;
   align-items: start;
 }
@@ -97,14 +97,21 @@
   border-color: var(--color-ink);
 }
 .footer-bottom {
-  margin-top: 40px;
-  padding-top: 20px;
+  margin-top: 30px;
+  padding-top: 16px;
   border-top: 2px solid var(--color-border-ink-25);
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 10px;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .footer-bottom {
+    justify-content: center;
+    gap: 8px;
+  }
 }
 </style>
