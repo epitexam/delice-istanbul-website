@@ -120,7 +120,7 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #221a17;
+  background: var(--color-ink-dark);
 }
 .photo img {
   width: 100%;
@@ -135,8 +135,8 @@ section[id] {
   line-height: 1.5;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8d817a;
-  border: 2px dashed rgba(243, 231, 209, 0.22);
+  color: var(--color-text-photo-hint);
+  border: 2px dashed var(--color-border-cream-22);
   width: calc(100% - 24px);
   height: calc(100% - 24px);
   display: flex;

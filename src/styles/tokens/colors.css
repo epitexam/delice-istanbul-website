@@ -2,22 +2,30 @@
    PALETTE BRUTE — valeurs exactes du design de référence
    ============================================================ */
 :root {
+  /* Couleurs de base */
   --color-red: #cf2e2a;
   --color-red-light: #e0433d;
   --color-ink: #16110f;
+  --color-ink-dark: #221a17;
   --color-cream: #f3e7d1;
+  --color-cream-light: #f9f1e4;
+  --color-cream-ultra-light: #fbf6f0;
   --color-sand: #e4d5b9;
   --color-sand-soft: #efe2cb;
 
-  /* Nuances de texte : le corps de page utilise --color-text,
-     légèrement plus chaud que le crème réservé aux aplats. */
+  /* Nuances de texte */
   --color-text: #eaddc8;
   --color-text-dark: #231c18;
   --color-text-muted: #514539;
-  --color-text-subtle: #ded4ca; /* liens de navigation, boutons de langue */
-  --color-text-faint: #a89a90; /* libellés secondaires, signatures d'avis */
+  --color-text-subtle: #ded4ca;
+  --color-text-faint: #a89a90;
+  --color-text-prose: #453a32;
+  --color-text-hero-lede: #eae0d2;
+  --color-text-hero-note: #fbe6df;
+  --color-text-photo-hint: #8d817a;
   --color-grey: #b5a9a0;
 
+  /* Couleurs neutres */
   --color-white: #ffffff;
   --color-black: #000000;
 
@@ -37,8 +45,31 @@
   --color-text-on-light: var(--color-text-dark);
   --color-text-muted-on-light: var(--color-text-muted);
 
+  /* Bords avec opacité */
   --color-border-light: rgba(207, 46, 42, 0.3);
   --color-border-dark: rgba(243, 231, 209, 0.14);
+  --color-border-cream-14: rgba(249, 241, 228, 0.14);
+  --color-border-cream-22: rgba(243, 231, 209, 0.22);
+  --color-border-cream-35: rgba(243, 231, 209, 0.35);
+  --color-border-cream-light-22: rgba(242, 236, 226, 0.22);
+  --color-border-ink-22: rgba(22, 17, 15, 0.22);
+  --color-border-ink-25: rgba(22, 17, 15, 0.25);
+
+  /* Arrière-plans avec opacité */
+  --color-bg-ink-86: rgba(22, 17, 15, 0.86);
+  --color-bg-ink-98: rgba(22, 17, 15, 0.98);
+  --color-bg-cream-light-07: rgba(243, 231, 209, 0.07);
+  --color-bg-cream-light-18: rgba(249, 241, 228, 0.18);
+
+  /* Ombres et effets avec opacité */
+  --color-shadow-ink-13: rgba(22, 17, 15, 0.13);
+  --color-shadow-ink-28: rgba(22, 17, 15, 0.28);
+  --color-shadow-ink-30: rgba(22, 17, 15, 0.3);
+  --color-shadow-ink-32: rgba(22, 17, 15, 0.32);
+  --color-shadow-cream-light-50: rgba(249, 241, 228, 0.5);
+  --color-shadow-cream-light-55: rgba(249, 241, 228, 0.55);
+  --color-shadow-white-10: rgba(255, 255, 255, 0.1);
+  --color-shadow-red-22: rgba(207, 46, 42, 0.22);
 
   --color-focus-ring: var(--color-cream);
 
