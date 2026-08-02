@@ -19,7 +19,7 @@ import DaySchedule from "../molecules/DaySchedule.astro";
             <span class="i18n fr">Ouvert<br />tous les jours</span>
             <span class="i18n en">Open<br />every day</span>
           </Heading>
-          <ScriptText size="small" color="red-light">
+          <ScriptText size="small" color="cream">
             <span class="i18n fr">service continu</span>
             <span class="i18n en">all day long</span>
           </ScriptText>
@@ -133,7 +133,7 @@ import DaySchedule from "../molecules/DaySchedule.astro";
     font-weight: 700;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--color-red-light);
+    color: var(--color-accent-on-dark);
   }
   .chips {
     display: flex;
@@ -163,6 +163,9 @@ import DaySchedule from "../molecules/DaySchedule.astro";
     color: var(--color-cream);
   }
   .callout a {
-    color: var(--color-red-light);
+    color: var(--color-cream);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 </style>

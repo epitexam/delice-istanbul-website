@@ -1,7 +1,7 @@
 ---
 interface Props {
   size?: 'large' | 'small' | 'hero';
-  color?: 'red' | 'red-light' | 'ink';
+  color?: 'red' | 'red-light' | 'ink' | 'cream';
   nowrap?: boolean;
 }
 const { size = 'large', color = 'red', nowrap = false } = Astro.props;
@@ -17,11 +17,12 @@ const { size = 'large', color = 'red', nowrap = false } = Astro.props;
   line-height: 1;
   transform-origin: left center;
 }
-.script-text--large { font-size: clamp(var(--font-size-script-sm), var(--font-size-script-sm), var(--font-size-script)); margin-top: clamp(6px, 1vw, 8px); transform: rotate(-3deg); }
-.script-text--small { font-size: clamp(var(--font-size-xs), var(--font-size-xs), var(--font-size-script-small)); margin-top: clamp(4px, 0.8vw, 6px); transform: rotate(-3deg); }
-.script-text--hero { font-size: clamp(var(--font-size-script-sm), var(--font-size-script-sm), var(--font-size-script-hero)); margin-top: clamp(4px, 0.8vw, 6px); transform: rotate(-4deg); }
+.script-text--large { font-size: var(--font-size-script); margin-top: clamp(6px, 1vw, 8px); transform: rotate(-3deg); }
+.script-text--small { font-size: var(--font-size-script-small); margin-top: clamp(4px, 0.8vw, 6px); transform: rotate(-3deg); }
+.script-text--hero { font-size: var(--font-size-script-hero); margin-top: clamp(4px, 0.8vw, 6px); transform: rotate(-4deg); }
 .script-text--red { color: var(--color-red); }
 .script-text--red-light { color: var(--color-red-light); }
 .script-text--ink { color: var(--color-ink); }
+.script-text--cream { color: var(--color-accent-on-dark); }
 .script-text--nowrap { white-space: nowrap; }
 </style>

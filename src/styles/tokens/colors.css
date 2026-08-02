@@ -35,7 +35,12 @@
   --color-primary: var(--color-red);
   --color-primary-light: var(--color-red-light);
   --color-primary-hover: var(--color-red-light);
-  --color-primary-on: var(--color-cream);
+  --color-primary-on: var(--color-text-on-red);
+
+  /* Contrastes accessibles (WCAG AA) */
+  --color-text-on-red: #ffffff;
+  --color-red-dark: #8f1e1a;
+  --color-accent-on-dark: var(--color-cream);
 
   --color-background-dark: var(--color-ink);
   --color-background-light: var(--color-sand);

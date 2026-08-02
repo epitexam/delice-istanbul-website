@@ -26,7 +26,7 @@
 #lang-en:checked ~ .page .lang-btn[for='lang-en'] {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: var(--color-cream);
+  color: var(--color-text-on-red);
 }
 
 
